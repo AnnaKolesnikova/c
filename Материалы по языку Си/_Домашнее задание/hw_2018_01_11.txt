@@ -1,0 +1,33 @@
+///////NoK
+
+int main()
+{
+	int a, b, n, nod, nok;
+
+	printf("\nVvedite dva chisla a i b:  ");
+	scanf_s("%d %d", &a, &b);
+
+	if (a <= 0 || b <= 0)
+	{
+		printf("\nVvedite drugie chisla: ");
+	}
+
+	nok = 0;
+
+	n = (a > b) ? b : a;
+
+	while (nok == 0)
+	{
+		nok = ((n % a == 0) && (n % b == 0)) ? n : 0;
+		n++;
+	}
+
+	printf("\nnok = %d", nok);
+
+	printf("\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+///////////////////////
+

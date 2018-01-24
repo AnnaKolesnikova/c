@@ -1,0 +1,96 @@
+ДЗ
+
+#include<locale.h>
+#include<stdio.h>
+#include<conio.h>
+
+int main() {
+	
+	printf("K\n\to\nl\n\te\ns\n\ti\nk\n\to\nv\n\ta\n");
+	
+	_getch();
+	return 0;
+}
+
+
+#include<locale.h>
+#include<stdio.h>
+#include<conio.h>
+
+int main() {
+	
+	printf("*******\n*\t*\n\n*\t*\n\n*\t*\n\n*\t*\n*******\n");
+	
+	_getch();
+	return 0;
+}
+
+
+
+int main {
+	int x, y;
+	
+	x = 21;
+	
+	y = 8;
+	
+	printf("%d+%d=%d\n",x,y,x+y);
+	// 21 + 8 = 29
+	printf("%d-%d=%d\n",x,y,x-y);
+	// 21 - 8 = 13
+	printf("%d*%d=%d\n",x,y,x*y);
+	// 21 * 8 = 168
+	printf("%d/%d=%d\n",x,y,x/y);	// 21 / 8 = 2
+	return 0;
+}
+
+
+int main() {
+	
+	
+	int x = 9, y = 11, z;
+	// поменять местами переменные
+	z = x;
+	
+	x = y;
+	
+	y = z;
+	
+	printf("x = %d\ny = %d",x,y);
+	
+	
+	return 0;
+
+}
+
+
+int main() {
+	
+	
+	int x = 9, y = 11;
+	//поменять местами без 3 переменной ???
+	x = y;
+	
+	y = x - 2;
+	
+	printf("x = %d\ny = %d",x,y);
+	
+	
+	return 0;
+}
+
+
+int main()
+{
+    double a,b,c,d;
+    printf("Enter A: ");
+    scanf("%lf",&a);
+    printf("Enter B: ");
+    scanf("%lf",&b);
+    printf("Enter C: ");
+    scanf("%lf",&c);
+    d = ((a+b+c)/(b+c)+a)*b/c;
+    printf("D=%.2lf",d);
+    return 0;
+}
+

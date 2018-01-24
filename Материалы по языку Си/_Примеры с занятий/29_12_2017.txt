@@ -1,0 +1,304 @@
+//#define _CRT_SECURE_NO_WARNINGS
+
+#include<windows.h>
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+
+int main()
+{
+	double x, y;
+
+	printf("\nVvedite chislo: ");
+	scanf("%lf", &x);
+
+	y = sqrt(x);
+
+	printf("\n\ny = %lf\n", y);
+
+	printf("\n\n\n\n\n\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+
+/////////////////////////////////
+
+
+//#define _CRT_SECURE_NO_WARNINGS
+
+#include<windows.h>
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+
+int main()
+{
+
+
+
+
+	for(int i = 1; i <= 10; i++)
+	{
+		if(i == 5)
+		{
+			continue;//позволяет пропустить выполнение оставшейся части тела цикла
+		}
+
+		//оставшаяся часть тела цикла
+
+
+		printf("i = %d\n", i);
+
+	}
+
+
+
+	/*
+	for(int i = 1; i <= 10; i++)
+	{
+		if(i == 5)
+		{
+			break;//выбрасывает из цикла
+		}
+		printf("i = %d\n", i);
+	}
+	*/
+
+
+
+
+
+
+
+
+
+
+	/*
+	int i = 77;
+	//for(int i = 1; i <= 10; i++)
+	for(int i = 100; i >= 50; i--)
+	{
+		// тело цикла for
+		printf("i = %d\n", i);
+
+		//printf("Hello\n");
+		//Sleep(1000);
+	}
+
+	printf("\n\n-------------------------------\n\n\ni = %d\n", i);
+	*/
+
+
+	printf("\n\n\n\n\n\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+/////////////////
+
+//#define _CRT_SECURE_NO_WARNINGS     ?????????
+
+#include<windows.h>
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+
+int main()
+{
+	double rez = 0;
+	int n;
+
+	do
+	{
+		printf("\nVvedite naturalnoe chislo n: ");
+		scanf("%d", &n);
+	}
+	while(n < 1);
+
+	int i = 1;
+	while(i <= n)
+	{
+		rez = rez + 1.0 / i;
+		i++;
+	}
+
+
+	/*
+	for(int i = 1; i <= n; i++)
+	{
+		rez = rez + 1.0 / i;
+	}
+	*/
+
+	printf("\n\nrez = %lf\n", rez);
+
+	printf("\n\n\n\n\n\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+
+////////////////////////
+
+//#define _CRT_SECURE_NO_WARNINGS
+
+#include<windows.h>
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+
+int main()
+{
+	int day;
+
+	printf("\nVvedite nomer dnia nedeli: ");
+	scanf("%d", &day);
+
+	switch(day)
+	{
+	case 7:
+		printf("\nVoskresenie");
+		break;
+	case 6:
+		printf("\nSubbota");
+		break;
+	case 1:
+		printf("\nPonedelnik");
+		break;
+	case 5:
+		printf("\nPiatnica");
+		break;
+	case 3:
+		printf("\nSreda");
+		break;
+	case 4:
+		printf("\nChetverg");
+		break;
+	case 2:
+		printf("\nVtornik");
+		break;
+	default:
+		printf("\n\nERROR!!!\n\nNet takogo dnia nedeli\n");
+		break;
+	}
+
+	printf("\n\n\n\n\n\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+//////////////////////
+
+//#define _CRT_SECURE_NO_WARNINGS
+
+#include<windows.h>
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+
+int main()
+{
+	int day;
+
+	printf("\nVvedite nomer dnia nedeli: ");
+	scanf("%d", &day);
+
+	switch(day)
+	{
+	case 7:
+	case 6:
+		printf("\nVixodnoy den");
+		break;
+	case 1:
+	case 5:
+	case 3:
+	case 4:
+	case 2:
+		printf("\nRabochiy den");
+		break;
+	default:
+		printf("\n\nERROR!!!\n\nNet takogo dnia nedeli\n");
+		break;
+	}
+
+	printf("\n\n\n\n\n\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+///////////////////
+
+//#define _CRT_SECURE_NO_WARNINGS
+
+#include<windows.h>
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+
+int main()
+{
+	int countA = 0;						//Счетчика введенных букв
+	int countB = 0;
+	int countC = 0;
+	int countD = 0;
+	int countE = 0;
+	char letter;						//Переменная для воода буквы
+	
+	printf( "Enter letter : " );				//Предложение ввести букву
+	letter = _getch();					//Чтение буквы (без вывода на экран)
+	printf( "%c\n", letter );				//Выводим только что прочитанную букву
+
+	while( letter != 27 )					//Выполнятем пока не нажмем клавише Esc
+	{
+		switch( letter )				//Проверяем букву:
+		{
+		case 'a' :					//Если а или А
+		case 'A' :
+			countA++;				//Увеличиваем счетчик буквы А
+			break;
+		case 'b' :
+		case 'B' :
+			countB++;
+			break;
+		case 'c' :
+		case 'C' :
+			countC++;
+			break;
+		case 'd' :
+		case 'D' :
+			countD++;
+			break;
+		case 'e' :
+		case 'E' :
+			countE++;
+			break;
+		default:
+			printf( "Wrong letter!\n" );
+			break;
+		}
+	
+		printf( "Enter letter : " );			//Предложение ввести букву
+		letter = _getch();				//Чтение буквы (без вывода на экран)
+		printf( "%c\n", letter );			//Выводим только что прочитанную букву
+	}
+
+	printf( "\n\n ======== Results : =========\n" );	//Выводим результаты программы
+	printf( "Count A : %d\n", countA );
+	printf( "Count B : %d\n", countB );
+	printf( "Count C : %d\n", countC );
+	printf( "Count D : %d\n", countD );
+	printf( "Count E : %d\n", countE );
+	printf("\n\n\n\n\n\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+////////////////////
+

@@ -1,0 +1,59 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	int countA = 0;						//Счетчика введенных букв
+	int countB = 0;
+	int countC = 0;
+	int countD = 0;
+	int countE = 0;
+	char letter;						//Переменная для воода буквы
+	
+	printf( "Enter letter : " );				//Предложение ввести букву
+	letter = getch();					//Чтение буквы (без вывода на экран)
+	printf( "%c\n", letter );				//Выводим только что прочитанную букву
+
+	while( letter != 27 )					//Выполнятем пока не нажмем клавише Esc
+	{
+		switch( letter )				//Проверяем букву:
+		{
+		case 'a' :					//Если а или А
+		case 'A' :
+			countA++;				//Увеличиваем счетчик буквы А
+			break;
+		case 'b' :
+		case 'B' :
+			countB++;
+			break;
+		case 'c' :
+		case 'C' :
+			countC++;
+			break;
+		case 'd' :
+		case 'D' :
+			countD++;
+			break;
+		case 'e' :
+		case 'E' :
+			countE++;
+			break;
+		default:
+			printf( "Wrong letter!" );
+			break;
+		}
+	
+		printf( "Enter letter : " );			//Предложение ввести букву
+		letter = getch();				//Чтение буквы (без вывода на экран)
+		printf( "%c\n", letter );			//Выводим только что прочитанную букву
+	}
+
+	printf( "\n\n ======== Results : =========\n" );	//Выводим результаты программы
+	printf( "Count A : %d\n", countA );
+	printf( "Count B : %d\n", countB );
+	printf( "Count C : %d\n", countC );
+	printf( "Count D : %d\n", countD );
+	printf( "Count E : %d\n", countE );
+	getch();
+	return 0;
+}
+

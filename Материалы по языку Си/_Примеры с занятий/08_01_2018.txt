@@ -1,0 +1,197 @@
+//#define _CRT_SECURE_NO_WARNINGS
+#include<windows.h>
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<time.h>
+
+int main()
+{
+	srand(time(NULL));
+	const int N = 100, M = 200;
+	int array[N][M], n, m, a = 1, b = 10, min, max;
+
+	char q;
+
+	do
+	{
+		system("cls");
+		printf("\nVvedite kolichestvo strok v massive ot 1 do %d: ", N);
+		scanf("%d", &n);
+
+		if(n < 1 || n > N)
+		{
+			system("cls");// очистка консоли
+			printf("\n\n\tERROR!!!\n");
+			//_getch();
+			fflush(stdin);
+			scanf("%c", &q);
+		}
+	}
+	while(n < 1 || n > N);
+
+	do
+	{
+		printf("\nVvedite kolichestvo stolbcov v massive ot 1 do %d: ", M);
+		scanf("%d", &m);
+
+		if(m < 1 || m > M)
+		{
+			system("cls");
+			printf("\n\n\tERROR!!!\n");
+			_getch();
+		}
+	}
+	while(m < 1 || m > M);
+	
+	for(int i = 0; i < n; i++)
+	{
+		for(int j = 0; j < m; j++)
+		{
+			array[i][j] = a + rand() % (b - a + 1);
+		}
+	}
+	
+	printf("\n\n--------------------------------\n\n");
+
+	//вывод в виде таблицы
+	for(int i = 0; i < n; i++)
+	{
+		for(int j = 0; j < m; j++)
+		{
+			printf("%-5d", array[i][j]);
+		}
+		printf("\n\n\n");
+	}
+
+	min = array[0][0];
+	max = array[0][0];
+
+	for(int i = 0; i < n; i++)
+	{
+		for(int j = 0; j < m; j++)
+		{
+			if(array[i][j] > max)
+			{
+				max = array[i][j];
+			}
+
+			if(array[i][j] < min)
+			{
+				min = array[i][j];
+			}
+		}
+	}
+
+
+	for(int i = 0; i < n; i++)
+	{
+		for(int j = 0; j < m; j++)
+		{
+			if(array[i][j] == max)
+			{
+				printf("max = array[%d][%d] = %d\n", i, j, max);
+			}
+
+			if(array[i][j] == min)
+			{
+				printf("min = array[%d][%d] = %d\n", i, j, min);
+			}
+		}
+	}
+	
+	printf("\n\n\n\n\n\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+////////////////////////////
+
+//#define _CRT_SECURE_NO_WARNINGS
+#include<windows.h>
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<time.h>
+
+
+int x;
+
+int main()
+{
+	printf("\nx = %d\n", x);
+
+	{
+		int x = 77;
+		printf("\nx = %d\n", ::x);
+
+		{
+			printf("\nx = %d\n", ::x);
+
+			int x = 44;
+
+			printf("\nx = %d\n", ::x);
+
+			{
+				printf("\nx = %d\n", ::x);
+
+				double x = 123.87;
+
+				printf("\nx = %lf\n", x);
+			}
+			printf("\nx = %d\n", ::x);
+		}
+
+		printf("\nx = %d\n", ::x);
+	}
+
+	printf("\nx = %d\n", x);
+
+	printf("\n\n\n\n\n\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+//////////////////////
+
+#define _CRT_SECURE_NO_WARNINGS
+
+#include<stdio.h>
+#include<conio.h>
+#include<windows.h>
+
+double function(int a, double b, int c);					//прототип функции
+//реализация ф-ии
+double function(int a, double b, int c)						//заголовок ф-ии
+//тело ф-ии
+{
+	static int x;
+	x++;
+	printf("\nx = %d\n", x);
+	double result;
+	result = (a + b + c) / 3;
+	return result;
+}
+
+
+int main()
+{
+	int a = 5, b = 10;
+	double c = 3.9, d;
+	
+	function(a, c, b);			//бесполезный вызов
+
+	d = function(a, c, b);
+	printf("\n\nd = %.2lf\n", d);
+
+	if(function(a, c, b) > 3)
+	{
+		printf("\n\nresult = %.2lf\n", function(a, c, b));
+	}
+
+	printf("\n\nThe end!!!\n");
+	_getch();		
+	return 0;
+}
+
+

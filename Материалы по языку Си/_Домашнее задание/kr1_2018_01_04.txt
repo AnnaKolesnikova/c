@@ -1,0 +1,315 @@
+//#define _CRT_SECURE_NO_WARNINGS
+
+#include<windows.h>
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+
+int main()
+{
+	double x, y;
+	//int i;
+
+	//printf("\nVvedite chislo: ");
+	//scanf("%d", &x);
+
+	for (x = -10; x <= 10; x++)
+	{
+		if (x >= -10 && x < -3)
+		{
+			y = sqrt(fabs(x)) / (cos(x) - sin(x));
+			printf("\npri x = %.2lf; y = %.2lf;\n", x, y);
+		}
+		else if (x >= -3 && x < 0)
+		{
+			y = (pow(x, 2) * sin(x)) / sqrt(10 - x);
+			printf("\npri x = %.2lf; y = %.2lf;\n", x, y);
+		}
+		else if (x == 0)
+		{
+			y = 0;
+			printf("\npri x = %.2lf; y = %.2lf;\n", x, y);
+		}
+		else if (x > 0 && x <= 3)
+		{
+			y = sqrt(pow(10, x)) / (10 * x);
+			printf("\npri x = %.2lf; y = %.2lf;\n", x, y);
+		}
+		else if (x > 3 && x <= 10)
+		{
+			y = ((cos(x) - x*cos(x)) / (sin(x) + x*sin(x)));
+			printf("\npri x = %.2lf; y = %.2lf;\n", x, y);
+		}
+	}
+
+	printf("\n\n\n\n\n\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+////////////////////////////////////////
+
+int main()
+{
+	int x, a = 0;
+
+	printf("\nVvedite naturalnoe chislo: ");
+	scanf_s("%d", &x);
+
+	while (x != 0)
+	{
+		a = a * 10 + x % 10;
+		x = x / 10;
+	}
+	printf("\nReversed number = %d\n", a);
+
+	printf("\n\n\n\n\n\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+
+////////////////////////////////////////
+
+
+int main()
+{
+	int x, a, max = 0, min;
+
+	printf("\nVvedite naturalnoe chislo: ");
+	scanf_s("%d", &x);
+
+	min = x % 10;
+	while (x != 0)
+	{
+		a = x % 10;
+		if (a >= max)
+		{
+			max = a;
+		}
+		if (a <= min)
+		{
+			min = a;
+		}
+		x = x / 10;
+	}
+
+	printf("\nmax =%d\nmin = %d\n", max, min);
+	
+	printf("\n\n\n\n\n\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+
+////////////////////////////////////////
+
+int main()
+{
+	int x, a, n = 0;
+
+	printf("\nVvedite naturalnoe chislo: ");
+	scanf_s("%d", &x);
+
+	while (x != 0)
+	{
+		a = x % 10;
+		x = x / 10;
+		n++;
+	}
+
+	printf("\nKolichestvo chisel n = %d\n", n);
+	
+	printf("\n\n\n\n\n\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+////////////////////////////////////////
+
+int main()
+{
+	int x, a, res = 0;
+
+	printf("\nVvedite naturalnoe chislo: ");
+	scanf_s("%d", &x);
+
+	while (x != 0)
+	{
+		a = x % 10;
+		res += a;
+		x = x / 10;
+	}
+
+	printf("\nSumma chisel: res = %d\n", res);
+	
+	printf("\n\n\n\n\n\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+////////////////////////////////////////
+
+int main()
+{
+	int x, a, pos = 0, neg = 0;
+
+	printf("\nVvedite naturalnoe chislo: ");
+	scanf_s("%d", &x);
+
+
+	while (x != 0)
+	{
+		a = x % 10;
+		if ((a % 2) == 0) 
+		{
+			pos = pos * 10 + x % 10;
+		}
+		if ((a % 2) == 1)
+		{
+			neg = neg * 10 + x % 10;
+
+		}
+		x = x / 10;
+	}
+
+	printf("\npos = %d\nneg = %d\n", pos, neg);
+	
+	printf("\n\n\n\n\n\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+
+////////////////////////////////////////
+
+//#define _CRT_SECURE_NO_WARNINGS
+
+#include<windows.h>
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+
+int main()                ???????????????????
+{
+	int x, y, a = 0;
+
+	printf("\nVvedite naturalnoe chislo: ");
+	scanf_s("%d", &x);
+
+	y = x;
+	while (y != 0)
+	{
+		a = a * 10 + y % 10;
+		y = y / 10;
+	}
+
+	printf("\nReversed number = %d\n", a);
+	
+	if (x == a) {
+		printf("\nChislo palendrom %d = %d\n", a,x);
+	}
+	else
+	{
+		printf("Net");
+	}
+
+	printf("\n\n\n\n\n\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+
+////////////////////////////////////////
+
+//#define _CRT_SECURE_NO_WARNINGS
+
+#include<windows.h>
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+
+int main()
+{
+	int type;
+	double P, p, S, a, b, c, r = 0, PI = 3.14;
+
+	printf("\nVvedite figuru, u kotoroi trebuetsia poschitat P i S:\n\t1 - Circle\n\t2 - Rectangle\n\t3 - Triangle\n\n");
+	scanf_s("%d", &type);
+
+	switch (type)
+	{
+		case 1:
+
+			printf("\nVvedite radius kruga r: ");
+			scanf_s("%lf", &r);
+
+			P = 2 * PI * r;
+			S = PI * pow(r, 2);
+			printf("\nDlina okruzhnosti = %.2lf\nPloshad kruga = %.2lf\n",P,S);
+			break;
+
+		case 2:
+
+			printf("\nVvedite storony pryamougolnika a i b: ");
+			scanf_s("%lf %lf", &a, &b);
+
+			P = 2 * (a + b);
+			S = a * b;
+			printf("\nPerimetr pryamougolnika = %.2lf\nPloshad pryamougolnika = %.2lf\n", P, S);
+			break;
+
+		case 3:
+
+			printf("\nVvedite storony treugolnika a,b,c: ");
+			scanf_s("%lf %lf %lf", &a,&b,&c);
+
+			P = a + b + c;
+			p = (a + b + c) / 2;
+			S = sqrt(p*(p - a)*(p -b)*(p -c));
+			printf("\nPerimert treugolnika = %.2lf\nPloshad treugolnika = %.2lf\n", P, S);
+			break;
+		default: printf("\n\n\tUkazhite nuzhnuyu figuru 1, 2 ili 3\n");
+	}
+
+
+
+
+	printf("\n\n\n\n\n\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+
+////////////////////////////////////////
+
+int main()
+{
+	//совершенные числа
+	int n, i, sum = 1;
+	printf("\nVvedite chislo: ");
+	scanf_s("%d", &n);
+
+	for (i = 2; i<=n/2; i++)
+	{
+		if (!(n % i))
+		{
+			sum += i;
+		}
+	}
+	if (sum == n)
+	{
+		printf("\nChislo sovershennoe!!!\n");
+	}
+	else
+	{
+		printf("Neeet!!!");
+	}
+
+	printf("\n\n\n\n\n\n\t\t\tThe end");
+	_getch();
+	return 0;
+}

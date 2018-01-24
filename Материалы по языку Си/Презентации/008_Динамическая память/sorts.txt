@@ -1,0 +1,256 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+
+void f();
+void puz(int*,int);
+void naim(int*,int);
+void shellz(int*,int);
+void xoar(int*,int,int);
+void shaker(int* ,int);
+void swap(int* ,int,int);
+void vstav(int*,int);
+
+int main()
+{
+	int i,j,n,*m=0,*k=0;
+	char c;
+	f();
+	c = getch();
+	while(c!='0')
+	{
+		switch (c)
+		{
+			case '1':
+			{
+				printf("4islo=");
+				scanf("%d",&n);
+				if(m)
+					free(m);
+				m=(int*)malloc(n*sizeof(int));
+				if(k)
+					free(k);
+				k=(int*)malloc(n*sizeof(int));
+				printf("massiv\n");
+				for(i=0;i<n;i++)
+					scanf("%d",&m[i]);
+				printf("\nvvedeno!\n");
+			}
+			break;
+
+			case '2':
+			{
+				for(i=0;i<n;i++) 
+					k[i]=m[i];
+				puz(k,n);
+				for(i=0;i<n;i++) 
+					printf("%d  ",k[i]);
+				printf("\n");
+			}
+			break;
+
+			case '3':
+			{
+				for(i=0;i<n;i++) 
+					k[i]=m[i];
+				naim(k,n);
+				for(i=0;i<n;i++) 
+					printf("%d  ",k[i]);
+				printf("\n");
+			}
+			break;
+
+			case '4':
+			{
+				for(i=0;i<n;i++) 
+					k[i]=m[i];
+				shellz(k,n);
+				for(i=0;i<n;i++) 
+					printf("%d  ",k[i]);
+				printf("\n");
+			}
+			break;
+
+			case '5':
+			{
+				for(i=0;i<n;i++)
+					k[i]=m[i];
+				xoar(k,0,n-1);
+				for(i=0;i<n;i++)
+					printf("%d  ",k[i]);
+				printf("\n");
+			}
+			break;
+
+			case '8':
+			{
+				for(i=0;i<n;i++)
+					printf("%d  ",m[i]);
+				printf("\n");
+			}
+			break;
+
+			case '6':
+			{
+				for(i=0;i<n;i++) k[i]=m[i];
+				shaker(k,n);
+				for(i=0;i<n;i++) printf("%d  ",k[i]);
+				printf("\n");
+			}
+			break;
+
+			case '7':
+			{
+				for(i=0;i<n;i++) 
+					k[i]=m[i];
+				vstav(k,n);
+				for(i=0;i<n;i++) 
+					printf("%d  ",k[i]);
+				printf("\n");
+			}
+			break;
+			case '9':
+			{
+				f();
+			}
+			break;
+		}
+		fflush(stdin);
+		c=getch();
+	}
+	return 0;
+}
+
+void f()
+{
+	printf("1.enter mas\n");
+	printf("2.sort puz\n");
+	printf("3.sort min vib\n");
+	printf("4.sort shell\n");
+	printf("5.sort Xoare\n");
+	printf("6.Shaker\n");
+	printf("7.Vstavka\n");
+	printf("8.print mas\n");
+	printf("9.clrscr\n");
+	return;
+}
+
+
+void puz(int* m,int n)
+{
+	int i,j,b;
+	for(i=0;i<n-1;i++)
+	for(j=0;j<n-1-i;j++)
+	if(m[j]<m[j+1])
+	{
+	  b=m[j];
+	  m[j]=m[j+1];
+	  m[j+1]=b;
+	}
+	return;
+}
+
+void naim(int* m,int n)
+{
+	int i,j,k,b;
+	for(i=0;i<n-1;i++)
+	{
+	k=i;
+	for(j=i+1;j<n;j++)
+		if(m[j]>m[k])
+			k=j;
+	b=m[k];
+	m[k]=m[i];
+	m[i]=b;
+	}
+	return;
+}
+
+
+void shellz(int* m,int n)
+{
+	int i,s,g,b;
+	for(g=n/2;g>0;g/=2)
+	do
+	{
+		s=0;
+		for(i=0;i+g<n;i++)
+		if(m[i]<m[i+g])
+		{
+			b=m[i+g];
+			m[i+g]=m[i];
+			m[i]=b;
+			s=1;
+		}
+	}while(s);
+	return;
+}
+
+
+
+void xoar(int* m,int l,int r)
+{
+	int i,k,b;
+	if(l>=r) return;
+	b=m[l];
+	m[l]=m[(r+l)/2];
+	m[(r+l)/2]=b;
+	k=l;
+	for(i=l+1;i<=r;i++)
+		if(m[i]>m[l])
+		{
+			k++;
+			b=m[k];
+			m[k]=m[i];
+			m[i]=b;
+		}
+	b=m[l];
+	m[l]=m[k];
+	m[k]=b;
+	xoar(m,l,k);
+	xoar(m,k+1,l);
+	return;
+}
+
+void shaker(int* m,int n)
+{
+	int l, r, i, b;
+	l = 1;
+	r = n - 1;
+	do
+	{
+	for( i = r; i >= l; i-- )
+		if( m[ i - 1 ] < m[ i ] )
+		{
+			b = m[ i ];
+			m[ i ] = m[ i - 1 ];
+			m[ i - 1 ] = b;
+			b = i;
+		}
+	l = b;
+	for( i = l; i <= r; i++ )
+		if( m[ i - 1 ] < m[ i ])
+		{
+			b = m[ i ];
+			m[ i ] = m[ i - 1 ];
+			m[ i - 1 ] = b;
+			b = i;
+		}
+	r = b;
+	}while(l<r);
+	return;
+}
+
+void vstav(int* m,int n)
+{
+	int i, j, k;
+	for( i = 1; i < n; i++ )
+	{
+		j = i - 1;
+		k = m[ i ];
+		while( j >= 0 && k > m[ j ] )
+			m[ j + 1 ] = m[ j-- ];
+		m[ j + 1 ] = k;
+	}
+	return;
+}

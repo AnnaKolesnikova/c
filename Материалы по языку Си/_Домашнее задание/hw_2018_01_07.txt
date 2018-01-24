@@ -1,0 +1,428 @@
+//////////////////
+ќƒЌќћ≈–Ќџ≈ ћј——»¬џ
+//////////////////
+ONE-DIMENSIONAL ARRAYS
+//////////////////////
+
+Zadacha 3 str.55
+
+int main()
+{
+	const int N = 10;   //объ€вление массива из 10 переменных
+	int arr[N], i;		//переменна€ цикла
+
+	for (i = 0; i < 10; i++)	//цикл от 0 до 9 с шагом 1
+	{
+		arr[i] = (i + 1) * 2;	//заполн€ем массив четными числами от 2 до 20
+	}
+
+	for (i = 0; i < 10; i++)	//цикл от 0 до 9 с шагом 1 
+	{
+		printf("\narr[%d] = %d\n", i, arr[i]);	//вывод элементов массива на экран
+	}
+	
+
+	printf("\n\n\n\n\n\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+
+/////////////////////////
+
+Zadacha 4 str.56
+
+int main()
+{
+	const int N = 10;   //объ€вление массива из 10 переменных
+	int arr[N];		//переменна€ цикла
+
+	int i = 0;
+	for (i; i < 10; i++)	//цикл от 0 до 9 с шагом 1
+	{
+		arr[i] = (i + 1) * 2;	//заполн€ем массив четными числами от 2 до 20
+		printf("\narr[%d] = %d\n", i, arr[i]);	//вывод элементов массива на экран
+	}
+
+
+
+	printf("\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+
+/////////////////////////
+
+Zadacha 4 str.56
+
+int main()
+{
+	const int N = 10;   //объ€вление массива из 10 переменных
+	int arr[N];		//переменна€ цикла
+
+	int i = 10;
+	for (i; i > 0; i--)	//цикл от 10 до 0 с шагом 1
+	{
+		arr[i] = (N - i + 1) * 2;	//заполн€ем массив четными числами от 20 до 2
+		printf("\narr[%d] = %d\n", i, arr[i]);	//вывод элементов массива на экран
+	}
+
+
+	printf("\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+/////////////////////////
+
+Zadacha 5, str.56
+
+int main()
+{
+	const int N = 10;
+	int arr[N];
+	int i;
+	int sum = 0;
+
+	for (i = 0; i < 10; i++)
+	{
+		printf("\nVvedite element massiva: [%d] = ", i);
+		scanf_s("%d",&arr[i]);
+		sum += arr[i];
+	}
+
+	printf("\nsum = %d", sum);
+	
+	
+	printf("\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+/////////////////////////
+
+Zadacha 6, str. 56
+
+int main()
+{
+	const int N = 10;
+	double arr[N];
+	int i;
+
+	for (i = 0; i < 10; i++)
+	{
+		printf("\nVvedite element massiva: [%d] = ", i);
+		scanf_s("%lf", &arr[i]);
+	}
+
+	printf("\n\n");
+
+	for (i = 9; i >= 0; i--)
+	{
+		printf("%.2lf ", arr[i]);
+	}
+	
+	
+	printf("\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+/////////////////////////
+
+Zadacha 7, str.56
+
+int main()
+{
+	srand(time(NULL));
+	const int N = 10;
+	int arr[N];
+	int i;
+	int sum = 0;
+
+	for (i = 0; i < 10; i++)
+	{
+		printf("\nVvedite element massiva: ");
+		scanf_s("\n%d", &arr[i]);
+		if (i % 2 == 0)
+		{
+			sum += arr[i];
+		}
+	}
+
+	printf("\nsum = %d ", sum);
+	
+	printf("\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+/////////////////////////
+
+Zadacha 8, str.56
+
+
+int main()
+{
+	const int N = 6;
+	double arr[N];
+	int i;
+	int n = 0;
+	double sum = 0;
+	double comp = 1;
+
+	for (i = 0; i < 6; i++)
+	{
+		printf("\nVvedite element massiva: ");
+		scanf_s("%lf", &arr[i]);
+		if (arr[i] < 0)
+		{
+			n++;
+		}
+		if (arr[i] > 0)
+		{
+			sum += arr[i];
+		}
+		if (i % 2 != 0)
+		{
+			comp *= arr[i];
+		}
+	}
+	
+	for (i = 0; i < 6; i++)
+	{
+		printf("\narr[%d] = %.2lf\n", i, arr[i]); //вывод массива
+	}
+
+	printf("\n\nKolichestvo otricatelnyh elementov = %d", n);
+	printf("\n\nSumma polozhitelnyh elementov = %.2lf", sum);
+	printf("\n\nProizvedenie elementov s nechetnym indeksom = %.2lf", comp);
+
+	
+	printf("\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+/////////////////////////
+
+Zadacha 9, str.57
+
+int main()
+{
+	int m[K];	// массив счетчиков ответов
+	unsigned arr[N] = { 1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10 }; //иниц-€ массива ответов
+	int i; //перем-€ цикла
+
+	for (i = 0; i < K; i++)  // от 0 до кол-ва баллов K = 11 с шагом 1
+	{
+		m[i] = 0;	 //обнуление счетчика ответов
+	}
+	for (i = 0; i < N; i++)	 //от 0 до количества ответов N с шагом 1
+	{
+		m[arr[i]]++;	 //кол-во ответов дл€ каждого балла
+	}
+	for (i = 1; i < K; i++)	 //от 0 до количества баллов K с шагом 1
+	{
+		printf("\nRating %d is: %d\n", i, m[i]; // вывод на экран кол-ва ответов за каждый балл
+	}
+	
+	printf("\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+/////////////////////////
+
+Zadacha 10, str.57
+
+int main()
+{
+	const int N = 10;
+	int arr[N];
+	int i;
+
+	for (i = 0; i < N; i++)
+	{
+		arr[i] = i + 1;
+	}
+
+	arr[5] = 22;
+
+	for (i = 6; i < N; i++)
+	{
+		arr[i] = i;
+	}
+
+	for (i = 0; i < N; i++)
+	{
+		printf("arr[%d] = %d\n\n", i, arr[i]);
+	}
+
+
+
+	
+	printf("\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+/////////////////////////
+ARRAY SORTING
+/////////////
+
+Zadacha 1, str.61
+
+int main()
+{
+	const int N = 10;
+	int arr[N];
+	int i;
+	int buf;
+
+	for (i = 0; i < N; i++)
+	{
+		printf("\nVvedite element massiva:");
+		scanf_s("\n%d", &arr[i]);
+	}
+
+	for (int j = 1; j <= N; j++)
+	{
+		for (i = 0; i < N - j; i++)
+		{
+			if (arr[i] > arr[i + 1])
+			{
+				buf = arr[i];
+				arr[i] = arr[i + 1];
+				arr[i + 1] = buf;
+			}
+		}
+	}
+
+	for (i = 0; i < N; i++)
+	{
+		printf("\narr[%d] = %d\n", i, arr[i]);
+	}
+		
+	printf("\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+/////////////////////////
+ 
+Zadacha 2, str. 61 (izmenen tolko 1 simvol!!!)
+
+	const int N = 10;
+	int arr[N];
+	int i;
+	int buf;
+
+	for (i = 0; i < N; i++)
+	{
+		printf("\nVvedite element massiva:");
+		scanf_s("\n%d", &arr[i]);
+	}
+
+	for (int j = 1; j <= N; j++)
+	{
+		for (i = 0; i < N - j; i++)
+		{
+			if (arr[i] < arr[i + 1])
+			{
+				buf = arr[i];
+				arr[i] = arr[i + 1];
+				arr[i + 1] = buf;
+			}
+		}
+	}
+
+	for (i = 0; i < N; i++)
+	{
+		printf("\narr[%d] = %d\n", i, arr[i]);
+	}
+		
+	printf("\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+/////////////////////////
+
+Zadacha 3, str.61
+
+int main()
+{
+	const int N = 6;
+	int arr[N];
+	int i,j,k,buf;
+
+	for (i = 0; i < N; i++)
+	{
+		printf("\nVvedite element massiva = ");
+		scanf_s("%d", &arr[i]);
+	}
+
+	for (i = 0; i <= N - 1; i++)
+	{
+		k = i;
+		for (j = i + 1; j < N; j++)
+		{
+			if (arr[k] > arr[j])
+			{
+				k = j;
+			}
+			buf = arr[i];
+			arr[i] = arr[k];
+			arr[k] = buf;
+		}
+	}
+
+	for (i = 0; i < N; i++)
+	{
+		printf("\narr[%d] = %d", i, arr[i]);
+	}
+		
+	printf("\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+
+//////////////////
+ƒ¬”ћ≈–Ќџ≈ ћј——»¬џ
+//////////////////
+TWO-DIMENSIONAL ARRAYS
+//////////////////////
+
+int main()
+{
+	const int M = 3, N = 4;
+	int arr[M][N], i, j;
+
+	for (i = 0; i < M; i++)
+	{
+		for (j = 0; j < N; j++)
+		{
+			printf("\narr[%d][%d] = ", i,j);
+			scanf_s("%d", &arr[i][j]);
+		}
+	}
+	for (i = 0; i < M; i++)
+	{
+		for (j = 0; j < N; j++)
+		{
+			printf("\narr[%d][%d] = %d", i,j,arr[i][j]);
+		}
+	}
+		
+	printf("\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+
+/////////////////////////
+
+

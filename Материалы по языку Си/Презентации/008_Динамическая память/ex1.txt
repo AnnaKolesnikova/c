@@ -1,0 +1,52 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#define m 4
+#define n 5
+int main()
+{
+	int **arr;												//Двойной указатель на массив	
+	arr = ( int** )malloc( m * sizeof( int* ) );			//Выделяем память под массив указателей
+	int i,j;
+	for( i = 0; i < m; i++ )								//Для каждого указателя из массива arr
+	{
+		arr[ i ] = ( int* )malloc( n * sizeof( int ) );		//Создаем собственный массив...
+		for( j = 0; j < n; j++ )							//...И заполняем его...
+			arr[ i ][ j ] = rand()%100;						//..случайными значеними от 0 до 99
+	}
+
+	printf( "Before sotr : \n" );							//Выводим массив до сортировки
+	for( i = 0; i < m; i++ )
+	{
+		for( j = 0; j < n; j++ )
+			printf( "%3d", arr[ i ][ j ] );
+		printf( "\n" );
+	}
+
+	int k = 0, *temp;										//Переменная для номера столбца и временный указатель на массив
+	printf( "enter nomber of column : " );
+	scanf( "%d", &k );										//Читаем номер сортируемого столбца
+	for( i = 0; i < m - 1; i++ )							//Сортировка пузырьком
+	{
+		for( j = 0; j < m - 1 - i; j++ )
+		{
+			if( arr[ j ][ k ] > arr[ j + 1 ][ k ] )			//Если элемент верхней строки больне элемента нижней
+			{
+				temp = arr[ j ];							//Меняем указатели на строки местами
+				arr[ j ] = arr[ j + 1 ];
+				arr[ j + 1 ] = temp;
+			}
+		}
+	}
+
+	printf( "After sotr : \n" );							//Выводим массив после сортировки.
+	for( i = 0; i < m; i++ )
+	{
+		for( j = 0; j < n; j++ )
+			printf( "%3d", arr[ i ][ j ] );
+		printf( "\n" );
+	}
+
+	getch();
+	return 0;
+}

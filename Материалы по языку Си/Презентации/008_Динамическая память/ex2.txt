@@ -1,0 +1,78 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<string.h>
+#define m 10
+int *GetGrades();
+int main()
+{
+	int *gread = GetGrades();						//Получаем указатель на массив баллов
+	int i, j;										//Переменные цикла
+	char **fam;										//Указатель на список фамилий
+	fam = ( char** )malloc( m * sizeof( char * ) );	//Создаем массив фамилий
+	fam[ 0 ] = "family4";							//Каждому элементу присваиваем фамилию
+	fam[ 1 ] = "family1";
+	fam[ 2 ] = "family9";
+	fam[ 3 ] = "family3";
+	fam[ 4 ] = "family0";
+	fam[ 5 ] = "family8";
+	fam[ 6 ] = "family6";
+	fam[ 7 ] = "family7";
+	fam[ 8 ] = "family5";
+	fam[ 9 ] = "family2";
+	printf( "Without sort :\n" );					//Выводим массивы до сортировки
+	for( i = 0; i < m; i++ )
+		printf( "%s \t %d \n", fam[ i ], gread[ i ] );
+	int k, temp;									//Переменные для сортировки
+	char * st;										//Переменная для строки
+	for( i = 0; i < m - 1; i++ )					//Сортировка отбором
+	{
+		k = i;
+		for( j = i + 1; j < m; j++ )				//Находим наименьшую строку
+			if( strcmp( fam[ j ], fam [ k ] ) < 0 )
+				k = j;
+		st = fam[ i ];								//Записываем её в начало
+		fam[ i ] = fam[ k ];
+		fam[ k ] = st;
+		temp = gread[ i ];							//Записываем соответствующую ей отметку
+		gread[ i ] = gread[ k ];
+		gread[ k ] = temp;
+	}
+	printf( "\nSort by grades :\n" );				//Выводим массивы после сортировки по фамилиям
+	for( i = 0; i < m; i++ )
+		printf( "%s \t %d \n", fam[ i ], gread[ i ] );
+	for( i = 0; i < m - 1; i++ )
+	{
+		k = i;
+		for( j = i + 1; j < m; j++ )				//Находим наименьшую отметку
+			if( gread[ j ] < gread[ k ] )
+				k = j;
+		temp = gread[ i ];							//Записываем её в начало
+		gread[ i ] = gread[ k ];
+		gread[ k ] = temp;
+		st = fam[ i ];								//Записываем соответствующую ей фамилию									
+		fam[ i ] = fam[ k ];
+		fam[ k ] = st;
+	}
+	printf( "\nSort by familyes :\n" );				//Выводим массивы после сортировки по отметкам
+	for( i = 0; i < m; i++ )
+		printf( "%s \t %d \n", fam[ i ], gread[ i ] );
+	getch();
+	return 0;
+}
+int *GetGrades()
+{
+	int *grades;
+	grades = ( int * )malloc( m * sizeof( int ) );
+	grades[ 0 ] = 40;
+	grades[ 1 ] = 89;
+	grades[ 2 ] = 45;
+	grades[ 3 ] = 90;
+	grades[ 4 ] = 57;
+	grades[ 5 ] = 60;
+	grades[ 6 ] = 46;
+	grades[ 7 ] = 60;
+	grades[ 8 ] = 92;
+	grades[ 9 ] = 94;
+	return grades;
+}

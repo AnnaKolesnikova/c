@@ -1,0 +1,33 @@
+#include<locale.h>
+#include<stdio.h>
+#include<conio.h>
+
+
+int main()
+{
+	int a, b;
+	double n, m;
+	char x, y;
+
+	m = 87.45;
+
+	printf("\nVvedite celoe chislo: ");
+	scanf("%d", &a);
+
+	printf("\nVvedite simvol: ");
+	fflush(stdin);
+	scanf("%c", &x);
+
+	printf("\nVvedite veshestvennoe chislo: ");
+	scanf("%lf", &n);
+
+
+
+	printf("\na = %d\n", a);
+	printf("\nx = %c\tx = %d\n", x, x);
+	printf("\nn = %.2lf\n", n);
+
+	printf("\n\n\nThe end");
+	_getch();
+	return 0;
+}

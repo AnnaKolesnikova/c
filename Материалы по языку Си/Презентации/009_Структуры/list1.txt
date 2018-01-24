@@ -1,0 +1,90 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<string.h>
+
+struct student
+{
+	char *Name;
+	int age;
+	char gender;
+};
+
+int getList( student * list );
+
+int main()
+{
+	student list[40];
+	int count;
+	count = getList( list );
+	int i, j, k, itmp;
+	char *ctmp;
+	char stmp;
+	printf( "Before sort :\n" );
+	for( i = 0; i < count; i++ )
+	{
+		printf( "%s, ade = %d, gender is %c\n", list[i].Name,list[i].age,list[i].gender );
+	}
+	for( int i = 0; i < count - 1; i++ )
+	{
+		k = i;
+		for( j = i + 1; j < count; j++ )
+			if( list[ j ].age < list[ k ].age )
+				k = j;
+		itmp = list[ i ].age;
+		list[ i ].age = list[ k ].age;
+		list[ k ].age = itmp;
+
+		stmp = list[ i ].gender;
+		list[ i ].gender = list[ k ].gender;
+		list[ k ].gender = stmp;
+
+		ctmp = list[ i ].Name;
+		list[ i ].Name = list[ k ].Name;
+		list[ k ].Name = ctmp;
+	}
+	printf( "\nAfter sort :\n" );
+	for( i = 0; i < count; i++ )
+	{
+		printf( "%s, ade = %d, gender is %c\n", list[i].Name,list[i].age,list[i].gender );
+	}
+
+	getch();
+	return 0;
+}
+
+int getList( student * list )
+{
+	list[0].Name = "Name 9";
+	list[0].age = 22;
+	list[0].gender = 'M';
+
+	list[1].Name = "Name 4";
+	list[1].age = 26;
+	list[1].gender = 'M';
+
+	list[2].Name = "Name 6";
+	list[2].age = 21;
+	list[2].gender = 'M';
+
+	list[3].Name = "Name 3";
+	list[3].age = 15;
+	list[3].gender = 'M';
+
+	list[4].Name = "Name 2";
+	list[4].age = 40;
+	list[4].gender = 'F';
+
+	list[5].Name = "Name 8";
+	list[5].age = 28;
+	list[5].gender = 'F';
+	
+	list[6].Name = "Name 7";
+	list[6].age = 18;
+	list[6].gender = 'F';
+	
+	list[7].Name = "Name 1";
+	list[7].age = 32;
+	list[7].gender = 'F';
+	return 8;
+}

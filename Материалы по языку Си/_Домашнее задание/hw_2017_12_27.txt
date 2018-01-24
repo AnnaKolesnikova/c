@@ -1,0 +1,356 @@
+﻿
+
+#include<locale.h>
+
+#include<stdio.h>
+
+#include<conio.h>
+
+
+
+int main() {
+	
+	
+
+printf("K\n\to\nl\n\te\ns\n\ti\nk\n\to\nv\n\ta\n");
+	
+	
+
+_getch();
+	
+return 0;
+
+}
+
+
+/////////////////////////////
+
+
+
+
+
+#include<locale.h>
+
+#include<stdio.h>
+
+#include<conio.h>
+
+
+
+int main() {
+	
+	
+
+printf("*******\n*\t*\n\n*\t*\n\n*\t*\n\n*\t*\n*******\n");
+	
+	
+_getch();
+	
+return 0;
+
+
+}
+
+
+
+
+
+/////////////////////////////
+
+
+int main {
+	
+int x, y;
+	
+	
+x = 21;
+	
+	
+y = 8;
+	
+	
+printf("%d+%d=%d\n",x,y,x+y);
+	// 21 + 8 = 29
+	
+printf("%d-%d=%d\n",x,y,x-y);
+	// 21 - 8 = 13
+	
+printf("%d*%d=%d\n",x,y,x*y);
+	// 21 * 8 = 168
+	
+printf("%d/%d=%d\n",x,y,x/y);	// 21 / 8 = 2
+	
+return 0;
+
+}
+
+
+
+
+/////////////////////////////
+
+
+int main() {
+	
+	
+	
+
+int x = 9, y = 11, z;
+	// ïîìåíÿòü ìåñòàìè ïåðåìåííûå
+	
+z = x;
+	
+	
+x = y;
+	
+	
+y = z;
+	
+	
+
+printf("x = %d\ny = %d",x,y);
+	
+	
+	
+
+return 0;
+
+
+
+}
+
+
+
+
+/////////////////////////////
+
+
+int main() {
+	
+	
+	
+
+int x = 9, y = 11;
+	//ïîìåíÿòü ìåñòàìè áåç 3 ïåðåìåííîé ???
+	
+x = y;
+	
+	
+y = x - 2;
+	
+	
+printf("x = %d\ny = %d",x,y);
+	
+	
+	
+
+return 0;
+
+}
+
+
+
+
+/////////////////////////////
+
+
+int main()
+{
+    
+
+double a,b,c,d;
+    
+
+printf("Enter A: ");
+    
+scanf("%lf",&a);
+    
+printf("Enter B: ");
+    
+scanf("%lf",&b);
+    
+printf("Enter C: ");
+    
+scanf("%lf",&c);
+    
+
+d = ((a+b+c)/(b+c)+a)*b/c;
+    
+
+printf("D=%.2lf",d);
+    
+return 0;
+
+}
+
+
+
+/////////////////////////////
+
+Вывод:
+Enter A: 5                                                                                                                                                                   
+Enter B: 6                                                                                          
+Enter C:                                                                                                                                                                     
+7                                                                                                                                                                            
+D=5.47
+
+
+Zada4a 1 str.24
+int main()
+{
+    int x,y;
+    
+    printf("\vvedite vash vozrast: ");
+    scanf("%d", &x);
+    printf("\vvedite tekushij god: ");
+    scanf("%d", &y);
+    printf("god vashego rozhdenija = %d - %d = %d", y,x,y-x);
+    return 0;
+}
+
+Zada4a 2 str.24
+int main()
+{
+    int x,y,z;
+    
+    printf("\vvedite celoe 4islo: ");
+    scanf("%d", &x);
+    printf("\vvedite celoe 4islo: ");
+    scanf("%d", &y);
+    printf("\vvedite celoe 4islo: ");
+    scanf("%d", &z);
+    
+    printf("\nsumma = %d + %d + %d = %d", x,y,z,x+y+z);
+    printf("\nraznost = %d - %d - %d = %d",x,y,z,x-y-z);
+    printf("\nproizvedenie = %d * %d * %d = %d", x,y,z,x*y*z);
+    printf("\nsrednee = (%d + %d + %d)/3= %d", x,y,z,(x+y+z)/3);
+    
+return 0;
+
+}
+
+
+
+/////////////////////////////
+
+
+
+
+Zada4a 3 str.24
+
+
+int main()
+{
+    
+int x;
+    
+    
+printf("\vvedite celoe 4islo: ");
+    
+scanf("%d", &x);
+
+    
+    
+printf("\nkvadrat x = %d", x*x);
+
+    
+
+return 0;
+
+
+}
+
+
+
+/////////////////////////////
+
+
+
+Zada4a 4 str.24
+
+
+int main()
+{
+    
+
+int x,y;
+    
+    
+printf("\vvedite celoe 4islo: ");
+    
+scanf("%d", &x);
+    
+printf("\vvedite celoe 4islo: ");
+    
+scanf("%d", &y);
+
+    
+    
+printf("\ndelenie 4isel = %d/%d = %d", x,y,x/y);
+
+    
+return 0;
+
+}
+
+
+
+/////////////////////////////
+
+
+
+Zada4a 5 str.24
+
+
+int main()
+{
+    
+
+int f,c;
+    
+    
+printf("\vvedite zna4enie temp t(f): ");
+    
+scanf("%d", &f);
+    
+    
+printf("t(c) = (%d-32)*5/9 = %d", f,(f-32)*5/9);
+
+    
+
+return 0;
+
+}
+
+/////////////////////////////
+
+
+
+Zada4a 6 str.24
+int main()
+{
+    
+
+int d = 15, l;
+    
+double PI = 3.14;
+    
+printf("dlina okruzhnisti = %lf * %d = %lf", PI,d,PI*d);
+
+    
+
+return 0;
+
+
+}
+
+
+
+/////////////////////////////
+
+
+
+Zada4a 7 str.24
+
+
+

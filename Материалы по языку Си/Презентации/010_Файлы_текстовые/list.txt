@@ -1,0 +1,127 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<string.h>
+struct data
+{
+	char FirstName[20];
+	char SecondName[20];
+	int age;
+	unsigned phone;
+	
+};
+
+struct element
+{
+	data *a;
+	bool change;
+};
+
+void inicialize();
+int addElement( data * );
+void modifyElement( int, data * );
+void readData();
+void saveData();
+void printData();
+int count = 0;
+element mem[100];
+char *workFile = "E:\\sample.dat";
+
+int main()
+{
+	inicialize();
+/*	data * d = ( data * )malloc( sizeof( data ) );
+	d->age = 22;
+	strcpy( d->FirstName, "Mihail" );
+	strcpy( d->SecondName, "Shaverdo");
+	d->phone = 12312345;
+	addElement( d );
+	d = ( data * )malloc( sizeof( data ) );
+	d->age = 16;
+	strcpy( d->FirstName, "Tolik" );
+	strcpy( d->SecondName, "Mihalski" );
+	d->phone = 493764834;
+	addElement( d );
+*/
+	readData();
+//	printData();
+/*	data * d = ( data * )malloc( sizeof( data ) );
+	d->age = 14;
+	strcpy( d->FirstName, "Max" );
+	strcpy( d->SecondName, "Stepchenkov");
+	d->phone = 9386487;
+	modifyElement( 2, d );
+	saveData();
+*/
+	printData();
+	getch();
+	return 0;
+}
+
+int addElement( data * dat )
+{
+	mem[count].a = dat;
+	mem[count].change = true;
+	return ++count;
+}
+
+void saveData()
+{
+	FILE *sf = fopen( workFile, "r+" );
+	for( int i = 0; i < count; i++ )
+	{
+		if( mem[ i ].change == true )
+		{
+			fseek( sf, i * sizeof( data ), SEEK_SET );
+			fwrite( mem[ i ].a , sizeof( data ), 1, sf );
+		}
+	}
+	fclose( sf );
+}
+
+void inicialize()
+{
+	for( int i = 0; i < 100; i++ )
+	{
+		mem[i].a = 0;
+		mem[i].change = false;
+	}
+};
+
+void readData()
+{
+	FILE *rf = fopen( workFile, "r" );
+	if( rf == 0 )
+		return;
+	count = 0;
+	data * d = ( data * )malloc( sizeof( data ) );
+	fseek( rf, 0, SEEK_SET );
+	fread( d, sizeof( data ), 1, rf );
+	while( !feof(rf) )
+	{
+		mem[count].a = d;
+		count++;
+		d = ( data * )malloc( sizeof( data ) );
+		fread( d, sizeof( data ), 1, rf );
+	}
+	free( d );
+	fclose( rf );
+	return;
+}
+
+void printData()
+{
+	for( int i = 0; i < count; i++ )
+	{
+		printf( "%2d %-10s\t%-15s%2d yeres   phone : %d\n",i, mem[i].a->FirstName, mem[i].a->SecondName, mem[i].a->age, mem[i].a->phone );
+	}
+}
+
+void modifyElement( int i, data * d )
+{
+	if( i >= count )
+		return;
+	free( mem[ i ].a );
+	mem[ i ].a = d;
+	mem[ i ].change = true;
+}

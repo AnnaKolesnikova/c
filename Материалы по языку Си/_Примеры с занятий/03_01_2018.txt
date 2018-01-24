@@ -1,0 +1,150 @@
+//#define _CRT_SECURE_NO_WARNINGS
+
+#include<windows.h>
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+#define M 10
+
+int main()
+{
+	int array[10];// объявляем одномерный массив состоящий из 10 элементов(переменных)
+
+	const int N = 10;
+	int array2[N];
+
+	int array3[M];
+
+	//три варианта объявления одномерных статических массивов
+
+
+	printf("\n\n\n\n\n\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+/////////////////////////
+
+//#define _CRT_SECURE_NO_WARNINGS
+#include<windows.h>
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+int main()
+{
+	const int N = 10;
+	int array[N], k = 25;
+
+	//заполняем массив данными
+	for(int i = 0; i < N; i++)
+	{
+		printf("\nVvedite array[%d] = ", i);
+		scanf("%d", &array[i]);
+		
+		//array[i] = i + 1;
+		
+		//array[i] = k;
+		//k = k - 2;
+	}
+
+	//вывод массива в столбик
+	printf("\n\n");
+	for(int i = 0; i < N; i++)
+	{
+		printf("array[%d] = %d\n", i, array[i]);
+	}
+
+	//вывод массива в строку
+	printf("\n\n");
+	for(int i = 0; i < N; i++)
+	{
+		printf("%d ", array[i]);
+	}
+	printf("\n\n");
+
+
+	//вывод массива в строку с конца к началу
+	printf("\n\n");
+	for(int i = N - 1; i >= 0; i--)
+	{
+		printf("%d ", array[i]);
+	}
+	printf("\n\n");
+	
+	printf("\n\n\n\n\n\n\t\t\tThe end");
+	_getch();
+	return 0;
+}
+
+///////////////////
+
+
+//#define _CRT_SECURE_NO_WARNINGS
+#include<windows.h>
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+int main()
+{
+	const int N = 100;
+	int array[N], n, max, min, imax, imin;
+
+	do
+	{
+		printf("\nVvedite razmer massiva ot 1 do %d: ", N);
+		scanf("%d", &n);
+
+		if(n < 1 || n > N)
+		{
+			system("cls");
+			printf("\n\n\tERROR!!!\n");
+			_getch();
+		}
+	}
+	while(n < 1 || n > N);
+
+	//заполняем массив данными
+	for(int i = 0; i < n; i++)
+	{
+		printf("\nVvedite array[%d] = ", i);
+		scanf("%d", &array[i]);
+	}
+
+	//вывод массива в строку
+	printf("\n\n");
+	for(int i = 0; i < n; i++)
+	{
+		printf("%d ", array[i]);
+	}
+	printf("\n\n");
+
+	max = array[0];
+	imax = 0;
+	min = array[0];
+	imin = 0;
+
+	for(int i = 1; i < n; i++)
+	{
+		if(array[i] > max)
+		{
+			max = array[i];
+			imax = i;
+		}
+
+		if(array[i] < min)
+		{
+			min = array[i];
+			imin = i;
+		}
+	}
+
+	printf("\nmax = array[%d] = %d\n", imax, array[imax]);
+	printf("\nmin = array[%d] = %d\n", imin, array[imin]);
+		
+	printf("\n\n\n\n\n\n\t\t\tThe end");
+	_getch();
+	return 0;
+}

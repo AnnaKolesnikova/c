@@ -1,0 +1,52 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<time.h>
+
+int rollDice();
+
+int main()
+{
+	srand(time(0));
+	int cnt1 = 0;				//Счетчики значений от 1 до 6
+	int cnt2 = 0;
+	int cnt3 = 0;
+	int cnt4 = 0;
+	int cnt5 = 0;
+	int cnt6 = 0;
+	int roll;				//Переменная для значения кубика
+	for( int i = 0; i < 60000; i++ )	//Цикл на 60000 итераций
+	{
+		roll = 1 + rand() % 6;		//Получаем значение кубика
+		switch( roll )			//Анализикуем это значение
+		{
+		case 1:				//Если 1
+		cnt1++;				//Увеличиваем счетчик единичной грани на 1
+			break;
+		case 2:
+			cnt2++;
+			break;
+		case 3:
+			cnt3++;
+			break;
+		case 4:
+			cnt4++;
+			break;
+		case 5:
+			cnt5++;
+			break;
+		case 6:
+			cnt6++;
+			break;
+		}
+	}
+	printf( "Face   Count\n" );		//Выводим шапку таблицы
+	printf( "  1    %5d\n", cnt1 );		//Выводим количество выпавших раз для каждой из сторон
+	printf( "  2    %5d\n", cnt2 );
+	printf( "  3    %5d\n", cnt3 );
+	printf( "  4    %5d\n", cnt4 );
+	printf( "  5    %5d\n", cnt5 );
+	printf( "  6    %5d\n", cnt6 );
+	getch();
+	return 0;
+}

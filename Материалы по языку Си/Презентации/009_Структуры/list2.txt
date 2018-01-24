@@ -1,0 +1,112 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<string.h>
+struct student
+{
+	char *Name;
+	int age;
+	char gender;
+};
+
+int getList( student ** list );
+int addInList( student ** list, int last );
+int main()
+{
+	int count;
+	student *list[100];
+	student * temp;
+	count = getList( list );
+	int i, j, k;
+	printf( "Before sort :\n" );
+	for( i = 0; i < count; i++ )
+	{
+		printf( "%s, ade = %d, gender is %c\n", list[i]->Name,list[i]->age,list[i]->gender );
+	}
+	for( int i = 0; i < count - 1; i++ )
+	{
+		k = i;
+		for( j = i + 1; j < count; j++ )
+			if( strcmp( list[ j ]->Name, list[ k ]->Name ) < 0 )
+				k = j;
+
+		temp = list[ i ];
+		list[ i ] = list[ k ];
+		list[ k ] = temp;
+	}
+	printf( "\nAfter sort :\n" );
+	for( i = 0; i < count; i++ )
+	{
+		printf( "%s, ade = %d, gender is %c\n", list[i]->Name,list[i]->age,list[i]->gender );
+	}
+
+	count = addInList( list, count );
+	printf( "\nAfter Add :\n" );
+	for( i = 0; i < count; i++ )
+	{
+		printf( "%s, ade = %d, gender is %c\n", list[i]->Name,list[i]->age,list[i]->gender );
+	}
+
+	getch();
+	return 0;
+}
+
+int getList( student ** list )
+{
+	for( int i = 0; i < 8; i++ )
+		list[ i ] = ( student* )malloc( sizeof( student ) );
+	list[0]->Name = "Name 9";
+	list[0]->age = 22;
+	list[0]->gender = 'M';
+
+	list[1]->Name = "Name 4";
+	list[1]->age = 26;
+	list[1]->gender = 'M';
+
+	list[2]->Name = "Name 6";
+	list[2]->age = 21;
+	list[2]->gender = 'M';
+
+	list[3]->Name = "Name 3";
+	list[3]->age = 15;
+	list[3]->gender = 'M';
+
+	list[4]->Name = "Name 2";
+	list[4]->age = 40;
+	list[4]->gender = 'F';
+
+	list[5]->Name = "Name 8";
+	list[5]->age = 28;
+	list[5]->gender = 'F';
+	
+	list[6]->Name = "Name 7";
+	list[6]->age = 18;
+	list[6]->gender = 'F';
+	
+	list[7]->Name = "Name 1";
+	list[7]->age = 32;
+	list[7]->gender = 'F';
+	return 8;
+}
+
+int addInList( student ** list, int last )
+{
+	list[ last ] = ( student* )malloc( sizeof( student ) );
+	char str[100];
+	int age;
+	char gen ;
+	printf( "Enter Name : " );
+	scanf( "%s", str );
+	printf( "Enter age : " );
+	fflush( stdin );
+	scanf( "%d", &age );
+	printf( "Enter gender : " );
+	fflush( stdin );
+	scanf( "%c", &gen );
+	list[ last ]->Name = ( char* )malloc( sizeof( char ) *( strlen( str ) + 1 ) );
+	strcpy( list[ last ]->Name, str );
+	list[ last ]->gender = gen;
+	list[ last ]->age = age;
+	last++;
+	return last;
+}

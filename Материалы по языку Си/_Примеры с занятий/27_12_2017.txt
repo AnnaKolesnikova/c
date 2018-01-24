@@ -1,0 +1,417 @@
+#include<locale.h>
+#include<stdio.h>
+#include<conio.h>
+
+
+int main()
+{
+	int a, b;
+	double n, m;
+	char x, y;
+
+	m = 87.45;
+
+	printf("\nVvedite celoe chislo: ");
+	scanf("%d", &a);
+
+	printf("\nVvedite simvol: ");
+	fflush(stdin);
+	scanf("%c", &x);
+
+	printf("\nVvedite veshestvennoe chislo: ");
+	scanf("%lf", &n);
+
+	printf("\nVvedite celoe, simvol, veshestvennoe znachenia: ");
+	scanf("%d%c%lf", &b, &y, &m);
+
+	printf("\na = %d\n", a);
+	printf("\nx = %c\tx = %d\n", x, x);
+	printf("\nn = %.2lf\n", n);
+
+	printf("\nb = %d\n", b);
+	printf("\ny = %c\ty = %d\n", y, y);
+	printf("\nm = %.2lf\n", m);
+
+	printf("\n\n\nThe end");
+	_getch();
+	return 0;
+}
+
+/////////////////////////
+
+//#define _CRT_SECURE_NO_WARNINGS
+
+#include<locale.h>
+#include<stdio.h>
+#include<conio.h>
+
+
+int main()
+{
+	int a;
+	char x, y;
+
+	printf("\nVvedite celoe chislo: ");
+	scanf("%d", &a);
+
+	printf("\nVvedite x: ");
+	//fflush(stdin);
+	x = _getch();
+
+	printf("\nVvedite y: ");
+	fflush(stdin);
+	y = getchar();
+
+	
+	printf("\nx = %c\tx = %d\n", x, x);
+		
+	printf("\ny = %c\ty = %d\n", y, y);
+	
+
+	printf("\n\n\nThe end");
+	_getch();
+	return 0;
+}
+
+
+////////////////////////////
+
+//#define _CRT_SECURE_NO_WARNINGS
+
+#include<locale.h>
+#include<stdio.h>
+#include<conio.h>
+
+
+int main()
+{
+	int x = 123456, k;
+	
+	printf("\nx = %d\n", x);
+	k = x % 10;
+	printf("\nk = %d\n", k);
+
+	x = x / 10;
+	printf("\nx = %d\n", x);
+	k = x % 10;
+	printf("\nk = %d\n", k);
+
+	x = x / 10;
+	printf("\nx = %d\n", x);
+	k = x % 10;
+	printf("\nk = %d\n", k);
+
+	x = x / 10;
+	printf("\nx = %d\n", x);
+	k = x % 10;
+	printf("\nk = %d\n", k);
+
+	x = x / 10;
+	printf("\nx = %d\n", x);
+	k = x % 10;
+	printf("\nk = %d\n", k);
+
+	x = x / 10;
+	printf("\nx = %d\n", x);
+	k = x % 10;
+	printf("\nk = %d\n", k);
+
+	x = x / 10;
+	printf("\nx = %d\n", x);
+	k = x % 10;
+	printf("\nk = %d\n", k);
+
+	x = x / 10;
+	printf("\nx = %d\n", x);
+	k = x % 10;
+	printf("\nk = %d\n", k);
+
+	x = x / 10;
+	printf("\nx = %d\n", x);
+	k = x % 10;
+	printf("\nk = %d\n", k);
+
+	x = x / 10;
+	printf("\nx = %d\n", x);
+	k = x % 10;
+	printf("\nk = %d\n", k);
+
+
+
+
+
+
+
+
+
+
+	printf("\n\n\nThe end");
+	_getch();
+	return 0;
+}
+
+//////////////////
+
+//#define _CRT_SECURE_NO_WARNINGS
+
+#include<locale.h>
+#include<stdio.h>
+#include<conio.h>
+
+
+int main()
+{
+	int mark;
+
+	printf("\nVvedite ocenku: ");
+	scanf("%d", &mark);
+
+	if(mark >= 5 && mark <= 10)
+	{
+		if(mark >= 8)
+		{
+			printf("\nUra!!!\n\n\tStudent poluchaet povishennuiu stipendiu!!!\n");
+		}
+		else
+		{
+			printf("\nStudent poluchaet stipendiu!!!\n");
+		}
+	}
+	else
+	{
+		if(mark > 0 && mark < 5)
+		{
+			printf("\nStudent - dvoechnik!!!\n");
+		}
+		else
+		{
+			printf("\nERROR!!!\n");
+		}
+	}
+	
+	printf("\n\n\nThe end");
+	_getch();
+	return 0;
+}
+
+//////////////////////
+
+//#define _CRT_SECURE_NO_WARNINGS
+
+#include<locale.h>
+#include<stdio.h>
+#include<conio.h>
+
+
+int main()
+{
+	int mark;
+
+	printf("\nVvedite ocenku: ");
+	scanf("%d", &mark);
+
+	if(mark > 0 && mark <= 10)
+	{
+		if(mark >= 5)
+		{
+			if(mark >=8)
+			{
+				printf("\nUra!!!\n\n\tStudent poluchaet povishennuiu stipendiu!!!\n");
+			}
+			else
+			{
+				printf("\nStudent poluchaet stipendiu!!!\n");
+			}
+		}
+		else
+		{
+			printf("\nStudent - dvoechnik!!!\n");
+		}
+	}
+	else
+	{
+		printf("\nERROR!!!\n");
+	}
+	
+	printf("\n\n\nThe end");
+	_getch();
+	return 0;
+}
+
+//////////////////
+
+//#define _CRT_SECURE_NO_WARNINGS
+
+#include<locale.h>
+#include<stdio.h>
+#include<conio.h>
+
+
+int main()
+{
+	int a = 0, b = 5, c = -5;
+
+	if(a == b + c)							//if(a = b + c)   //if(a)   if(a != 0)
+	{
+		printf("\ntrue");
+	}
+	else
+	{
+		printf("\nfalse");
+	}
+
+
+
+
+	printf("\n\n\nThe end");
+	_getch();
+	return 0;
+}
+
+/////////////////
+
+//#define _CRT_SECURE_NO_WARNINGS
+
+#include<locale.h>
+#include<stdio.h>
+#include<conio.h>
+
+
+int main()
+{
+	int x, summa = 0;
+
+	printf("\nVvedite x: ");
+	scanf("%d", &x);
+
+	//цикл с предусловием может не выполнится ни разу
+	while(x != -1)
+	{
+		summa = summa + x;
+
+		printf("\nVvedite x: ");
+		scanf("%d", &x);
+	}
+
+	printf("\n\nsumma = %d\n", summa);
+
+	printf("\n\n\nThe end");
+	_getch();
+	return 0;
+}
+
+////////////////
+
+//#define _CRT_SECURE_NO_WARNINGS
+
+#include<locale.h>
+#include<stdio.h>
+#include<conio.h>
+
+
+int main()
+{
+	int x, summa = 0;
+//цикл с постусловием выполнится как минимум щдин раз
+	do
+	{
+		printf("\nVvedite x: ");
+		scanf("%d", &x);
+
+		summa = summa + x;
+	} while (x != -1);
+
+	
+
+	
+	
+	printf("\n\nsumma = %d\n", summa);
+
+	printf("\n\n\nThe end");
+	_getch();
+	return 0;
+}
+
+/////////////
+
+//#define _CRT_SECURE_NO_WARNINGS
+
+#include<locale.h>
+#include<stdio.h>
+#include<conio.h>
+
+
+int main()
+{
+	int day;
+
+	do
+	{
+		printf("\nVvedite den nedeli: ");
+		scanf("%d", &day);
+	}
+	while(day < 1 || day > 7);
+
+
+
+	printf("\n\n\nThe end");
+	_getch();
+	return 0;
+}
+
+//////////////////
+
+//#define _CRT_SECURE_NO_WARNINGS
+
+#include<windows.h>
+#include<stdio.h>
+#include<conio.h>
+
+
+int main()
+{
+	int pin = 1234, x, k = 0, a = 2;
+
+	printf("\nVvedite parol: ");
+	scanf("%d", &x);
+	
+	while(x != pin)
+	{
+		k++;			//k = k + 1;   ++k;
+		if(k == 3)
+		{
+			system("cls");
+			printf("\n\n\n\tGAME OVER!!!!!");
+			printf("\n\n\n:-( :-( :-( :-( :-( :-( :-( :-( :-( :-( :-( :-( :-( :-( \n");
+			Sleep(2000);
+			return 0;
+		}
+
+		system("cls");
+		printf("\n\n\tERROR!!!\n");
+		Sleep(1500);
+
+		system("cls");
+		printf("\n\n\n\n\t\tOstalos popitok: %d\n", a--);
+		Sleep(1500);
+
+		system("cls");
+		printf("\nVvedite parol: ");
+		scanf("%d", &x);
+	}
+
+	system("cls");
+	printf("\n\n\tParol priniat\n");
+	Sleep(1500);
+
+	system("cls");
+	printf("\n\n\n\n\t\tViponiaetsia osnovnaia programma\n");
+	Sleep(1500);
+
+	//код основной программы
+
+	system("cls");
+	printf("\n\n\n\n\n\n\t\t\tThe end");
+	_getch();
+	return 0;
+}

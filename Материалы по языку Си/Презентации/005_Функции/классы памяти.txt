@@ -1,0 +1,59 @@
+#include<stdio.h>
+void a();
+void b();
+void c();
+
+int x=1;
+
+void main()
+
+{
+	printf("x=%d\n",++x);
+		{
+			int x=5;
+			printf("x=%d\n",x++);
+				{
+					int x=7;
+					printf("x=%d\n",x);
+				}
+			printf("x=%d\n",x);
+			a();
+			b();
+			c();
+			a();
+			b();
+			c();
+			printf("x=%d\n",x);
+		}
+	printf("x=%d\n",x++);
+	printf("x=%d\n",x);
+}
+
+void a()
+{
+	static int x=555;
+	printf("x=%d\n",x);
+		{
+			int x=25;
+			printf("x=%d\n",x);
+			x++;
+			printf("x=%d\n",x);
+		}
+	x++;
+	printf("x=%d\n",x);
+}
+
+void b()
+{
+	static int x=50;
+	printf("x=%d\n",x);
+	x++;
+	printf("x=%d\n",x);
+}
+void c()
+{
+	
+	printf("x=%d\n",x);
+	x*=10;
+	printf("x=%d\n",x);
+}

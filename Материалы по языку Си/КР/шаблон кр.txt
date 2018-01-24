@@ -1,0 +1,71 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include<stdio.h>
+#include<conio.h>
+#include<windows.h>
+
+int menu()
+{
+	printf("\nVvedite:\n");
+	printf("1 - zadacha 1\n");
+	printf("2 - zadacha 2\n");
+	printf("3 - zadacha 3\n");
+	printf("4 - zadacha 4\n");
+	puts("5 - zadacha 5");
+	puts("0 - Vyhod");
+	
+	int z;
+	printf("\n>>>");
+	scanf("%d", &z);
+	printf("\n");
+	return z;
+}
+
+
+int main()
+{
+	while(int z = menu())		//while(z)			while(z!=0)
+	{
+		switch(z)
+		{
+		case 1:
+			{
+				printf("\n\nVipolniaetsia zadacha 1!!!\n");
+				break;
+			}
+		case 2:
+			{
+				printf("\n\nVipolniaetsia zadacha 2!!!\n");
+				break;
+			}
+		case 3:
+			{
+				printf("\n\nVipolniaetsia zadacha 3!!!\n");
+				break;
+			}
+		case 4:
+			{
+				printf("\n\nVipolniaetsia zadacha 4!!!\n");
+				break;
+			}
+		case 5:
+			{
+				printf("\n\nVipolniaetsia zadacha 5!!!\n");
+				break;
+			}
+		default:
+			{
+				puts("\n\n\tERROR!!!\n\n");
+				break;
+			}
+		}
+		printf("\n\nPress any key...\n\n");
+		_getch();
+		system("cls");
+	}
+
+	
+	printf("\n\nThe end!!!\n");
+	_getch();		
+	return 0;
+}

@@ -1,0 +1,342 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<time.h>
+#include<stdio.h>
+
+int func(int a);
+int func(int a)
+{
+	if(a > 1)
+	{
+		return a * func(a - 1);
+	}
+	else
+	{
+		return 1;
+	}
+}
+
+
+int main()
+{
+	for(int i = 0; i <=12; i++)
+	{
+		printf("\n%d! = %d\n", i, func(i));
+	}
+
+
+
+
+	printf("\n\n\nThe end!!!\n");
+	_getch();
+	return 0;
+}
+
+	
+/////////////////////////////
+
+
+#define _CRT_SECURE_NO_WARNINGS
+
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<time.h>
+#include<stdio.h>
+
+int k = 0;
+
+int func(int a);
+int func(int a)
+{
+	k++;
+	if(a > 2)
+	{
+		return func(a - 1) + func(a - 2);
+	}
+	else
+	{
+		return a - 1;
+	}
+}
+
+
+int main()
+{
+	/*
+	for(int i = 1; i <= 40; i++)
+	{
+		printf("\n%d-e chislo\t%d\n", i, func(i));
+	}
+	*/
+
+	printf("\n%d-e chislo\t%d\n", 41, func(41));
+	printf("\nk = %d\n", k);
+
+	printf("\n\n\nThe end!!!\n");
+	_getch();
+	return 0;
+}
+
+
+/////////////////////////
+
+//передача одномерного массива в функцию
+
+#define _CRT_SECURE_NO_WARNINGS
+
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<time.h>
+#include<stdio.h>
+
+void vvod_mass(int a[], int k);			//void vvod_mass(int * a, int k);
+void vvod_mass(int a[], int k)
+{
+	for(int i = 0; i < k; i++)
+	{
+		a[i] = 1 + rand() % (999 - 1 + 1);
+	}
+}
+
+void vivod_mass(int a[], int k);			
+void vivod_mass(int a[], int k)
+{
+	printf("\n");
+	for(int i = 0; i < k ; i++)
+	{
+		printf("%d ", a[i]);
+	}
+	printf("\n\n\n");
+}
+
+int main()
+{
+	const int N = 100;
+	int x[N], y[N], z[N], n, n2 = 20, n3 = 15;
+
+	do
+	{
+		printf("\nVvedite razmer massiva ot 1 do %d: ", N);
+		scanf("%d", &n);
+	}
+	while(n < 1 || n > N);
+	
+	vvod_mass(x, n);
+	printf("\nSoderjimoe massiva x:\n\n");
+	vivod_mass(x, n);
+	
+	vvod_mass(y, n2);
+	printf("\nSoderjimoe massiva y:\n\n");
+	vivod_mass(y, n2);
+
+	vvod_mass(z, n3);
+	printf("\nSoderjimoe massiva z:\n\n");
+	vivod_mass(z, n3);
+
+
+
+	printf("\n\n\nThe end!!!\n");
+	_getch();
+	return 0;
+}
+
+
+//////////////////////////////
+
+//передача двумерного массива в функцию
+	
+#define _CRT_SECURE_NO_WARNINGS
+
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<time.h>
+#include<stdio.h>
+
+#define N 100 
+#define M 200
+
+void vvod_mass(int a[][M], int k1, int k2);			
+void vvod_mass(int a[][M], int k1, int k2)
+{
+	for(int i = 0; i < k1; i++)
+	{
+		for(int j = 0; j < k2; j++)
+		{
+			a[i][j] = 1 + rand() % (999 - 1 + 1);
+		}
+	}
+}
+
+void vivod_mass(int a[][M], int k1, int k2);			
+void vivod_mass(int a[][M], int k1, int k2)
+{
+	printf("\n");
+	for(int i = 0; i < k1 ; i++)
+	{
+		for(int j = 0; j < k2; j++)
+		{
+			printf("%-5d", a[i][j]);
+		}
+		printf("\n\n\n");
+	}
+	printf("\n\n\n");
+}
+
+int main()
+{
+	int x[N][M], y[N][M], z[N][M], n, m, n2 = 20, m2 = 10, n3 = 15, m3 = 15;
+
+	do
+	{
+		printf("\nVvedite kolichestvo strok v massive ot 1 do %d: ", N);
+		scanf("%d", &n);
+	}
+	while(n < 1 || n > N);
+
+	do
+	{
+		printf("\nVvedite kolichestvo stolbcov v massive ot 1 do %d: ", M);
+		scanf("%d", &m);
+	}
+	while(m < 1 || m > M);
+	
+	vvod_mass(x, n, m);
+	printf("\nSoderjimoe massiva x:\n\n");
+	vivod_mass(x, n, m);
+	
+	vvod_mass(y, n2, m2);
+	printf("\nSoderjimoe massiva y:\n\n");
+	vivod_mass(y, n2, m2);
+
+	vvod_mass(z, n3, m3);
+	printf("\nSoderjimoe massiva z:\n\n");
+	vivod_mass(z, n3, m3);
+
+
+
+	printf("\n\n\nThe end!!!\n");
+	_getch();
+	return 0;
+}
+
+/////////////////////////////////
+
+//начало 3 контрольной работы
+
+#define _CRT_SECURE_NO_WARNINGS
+
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<time.h>
+#include<stdio.h>
+
+void vvod_mass(int a[], int k);			//void vvod_mass(int * a, int k);
+void vvod_mass(int a[], int k)
+{
+	for(int i = 0; i < k; i++)
+	{
+		a[i] = 1 + rand() % (999 - 1 + 1);
+	}
+}
+
+void vivod_mass(int a[], int k);			
+void vivod_mass(int a[], int k)
+{
+	printf("\n");
+	for(int i = 0; i < k ; i++)
+	{
+		printf("%d ", a[i]);
+	}
+	printf("\n\n\n");
+}
+
+void sort_vozr(int a[], int b[], int k);
+void sort_vozr(int a[], int b[], int k)
+{
+	for(int i = 0; i < k; i++)
+	{
+		b[i] = a[i];
+	}
+
+	for(int j = 1; j < k; j++)
+	{
+		for(int i = 0; i < k - j; i++)
+		{
+			if(b[i] > b[i+1])
+			{
+				int buf = b[i];
+				b[i] = b[i+1];
+				b[i+1] = buf;
+			}
+		}
+	}
+}
+
+void sort_ubiv(int a[], int b[], int k);
+void sort_ubiv(int a[], int b[], int k)
+{
+	for(int i = 0; i < k; i++)
+	{
+		b[i] = a[i];
+	}
+
+	for(int j = 1; j < k; j++)
+	{
+		for(int i = 0; i < k - j; i++)
+		{
+			if(b[i] < b[i+1])
+			{
+				int buf = b[i];
+				b[i] = b[i+1];
+				b[i+1] = buf;
+			}
+		}
+	}
+}
+
+
+
+
+int main()
+{
+	srand(time(NULL));
+	const int N = 100;
+	int x[N], x_copy[N], y[N], y_copy[N], z[N], kol[N], sum[N], n, min, max;
+
+	do
+	{
+		printf("\nVvedite razmer massiva ot 1 do %d: ", N);
+		scanf("%d", &n);
+	}
+	while(n < 1 || n > N);
+	
+	vvod_mass(x, n);
+	printf("\nSoderjimoe massiva x:\n\n");
+	vivod_mass(x, n);
+	
+	sort_vozr(x, x_copy, n);
+	printf("\nSoderjimoe otsortirovannogo massiva x:\n\n");
+	vivod_mass(x_copy, n);
+
+
+
+
+
+
+
+
+
+	printf("\n\n\nThe end!!!\n");
+	_getch();
+	return 0;
+}
+	
+
+	
